@@ -50,24 +50,24 @@ if st.button("Predict"):
     user_features = pd.DataFrame({
         'success_feature': [any(keyword in user_input for keyword in success_keywords)],
         'failure_feature': [any(keyword in user_input for keyword in failure_keywords)]
-})
+    })
 
-# Assuming 'success_label' is the target variable
-features = df['success_feature', 'failure_feature']
-target = df['success_label']
+    # Assuming 'success_label' is the target variable
+    features = df['success_feature', 'failure_feature']
+    target = df['success_label']
 
-# Initialize a RandomForestClassifier
-model = RandomForestClassifier(n_estimators=100, random_state=42)
+    # Initialize a RandomForestClassifier
+    model = RandomForestClassifier(n_estimators=100, random_state=42)
 
-# Train the model
-model.fit(features, target)
+    # Train the model
+    model.fit(features, target)
 
-# Make prediction for user input
-prediction = model.predict(user_features)
+    # Make prediction for user input
+    prediction = model.predict(user_features)
 
 
     # Display prediction
-if prediction[0] == 1:
-    st.success("The model predicts that your startup is likely to succeed. Good luck! for a start to break bounds of everyone's imagination.")
-else:
-    st.error("The model predicts that your startup is likely to fail. Consider providing more appealing features to customers and take up the universe.")
+    if prediction[0] == 1:
+        st.success("The model predicts that your startup is likely to succeed. Good luck! for a start to break bounds of everyone's imagination.")
+    else:
+        st.error("The model predicts that your startup is likely to fail. Consider providing more appealing features to customers and take up the universe.")
