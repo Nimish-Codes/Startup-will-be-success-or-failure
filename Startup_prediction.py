@@ -56,7 +56,7 @@ prediction = model.predict(user_features)
 
 
     # Display prediction
-    if prediction[0] == 1:
-        st.success("The model predicts that your startup is likely to succeed. Good luck! for a start to break bounds of everyone's imagination.")
-    else:
-        st.error("The model predicts that your startup is likely to fail. Consider providing more appealing features to customers and take up the universe.")
+if prediction[0] == 1:
+    st.success("The model predicts that your startup is likely to succeed. Good luck! for a start to break bounds of everyone's imagination.")
+else:
+    st.error("The model predicts that your startup is likely to fail. Consider providing more appealing features to customers and take up the universe.")
