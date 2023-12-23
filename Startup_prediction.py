@@ -53,7 +53,7 @@ if st.button("Predict"):
 })
 
 # Assuming 'success_label' is the target variable
-features = df['success_feature', 'failure_feature']
+features = df[['success_feature', 'failure_feature']]
 target = df['success_label']
 
 # Initialize a RandomForestClassifier
