@@ -46,13 +46,14 @@ user_input = st.text_area("Enter a description of your startup:")
 
 if st.button("Predict"):
     # Convert user input to numerical features using TF-IDF
-    user_features = pd.DataFrame({
-        'success_feature': [any(keyword in user_input for keyword in success_keywords)],
-        'failure_feature': [any(keyword in user_input for keyword in failure_keywords)]
-    })
+user_features = pd.DataFrame({
+    'success_feature': [any(keyword in user_input for keyword in success_keywords)],
+    'failure_feature': [any(keyword in user_input for keyword in failure_keywords)]
+})
 
-    # Make prediction for user input
-    prediction = model.predict(user_features)
+# Make prediction for user input
+prediction = model.predict(user_features)
+
 
     # Display prediction
     if prediction[0] == 1:
