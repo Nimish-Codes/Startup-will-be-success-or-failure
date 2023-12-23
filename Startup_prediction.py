@@ -41,6 +41,10 @@ df = pd.DataFrame(data)
 # Streamlit app
 st.title("Startup Success Prediction")
 
+# Assuming 'success_label' is the target variable
+features = df['success_feature', 'failure_feature']
+target = df['success_label']
+
 # Initialize a RandomForestClassifier
 model = RandomForestClassifier(n_estimators=100, random_state=42)
 
