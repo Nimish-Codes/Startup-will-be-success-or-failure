@@ -41,15 +41,6 @@ df = pd.DataFrame(data)
 # Streamlit app
 st.title("Startup Success Prediction")
 
-# Assuming 'success_label' is the target variable
-features = df['success_feature', 'failure_feature']
-target = df['success_label']
-
-# Initialize a RandomForestClassifier
-model = RandomForestClassifier(n_estimators=100, random_state=42)
-
-# Train the model
-model.fit(features, target)
 
 # User input for startup features
 user_input = st.text_area("Enter a description of your startup:")
@@ -60,6 +51,16 @@ if st.button("Predict"):
     'success_feature': [any(keyword in user_input for keyword in success_keywords)],
     'failure_feature': [any(keyword in user_input for keyword in failure_keywords)]
 })
+
+# Assuming 'success_label' is the target variable
+features = df['success_feature', 'failure_feature']
+target = df['success_label']
+
+# Initialize a RandomForestClassifier
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+
+# Train the model
+model.fit(features, target)
 
 # Make prediction for user input
 prediction = model.predict(user_features)
