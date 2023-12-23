@@ -41,6 +41,12 @@ df = pd.DataFrame(data)
 # Streamlit app
 st.title("Startup Success Prediction")
 
+# Initialize a RandomForestClassifier
+model = RandomForestClassifier(n_estimators=100, random_state=42)
+
+# Train the model
+model.fit(features, target)
+
 # User input for startup features
 user_input = st.text_area("Enter a description of your startup:")
 
