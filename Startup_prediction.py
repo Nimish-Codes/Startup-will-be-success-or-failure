@@ -35,6 +35,9 @@ df = pd.DataFrame(data)
 # Streamlit app
 st.title("Startup Success Prediction")
 
+# Print column names to inspect
+print("Column names in DataFrame:", df.columns)
+
 # User input for startup features
 user_input = st.text_area("Enter a description of your startup:")
 
@@ -45,7 +48,9 @@ if st.button("Predict"):
         'failure_feature': [any(keyword in user_input for keyword in failure_keywords)]
     })
 
-    print("Column names in DataFrame:", df.columns)
+    # Print user_features for debugging
+    print("User Features DataFrame:")
+    print(user_features)
 
     # Assuming 'success_label' is the target variable
     features = df[['success_feature', 'failure_feature']]
