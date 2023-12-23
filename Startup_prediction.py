@@ -18,6 +18,26 @@ failure_keywords = ['struggling', 'financial difficulties', 'poor management', '
     'declining user engagement', 'legal issues', 'poor execution', 'high turnover rate',
     'stagnant growth', 'revenue decline', 'negative public perception', "Lack of Product-Market Fit", "Poor Financial Management", "Inadequate Market Research", "Resistance to Change", "Insufficient Adaptability", "Talent Shortage", "Failed Partnerships", "Lack of Strategic Vision", "Ineffective Marketing", "Slow Execution", "Poor User Experience", "Communication Breakdown", "Lack of Innovation", "Weak Branding", "Inability to Solve Problems", "Ignoring Risk Management", "Ignoring Customer Feedback", "Lack of Learning", "Lack of Resilience", "Poor Time Management", "Isolation", "Data Neglect", "Core Competency Neglect", "Community Disengagement", "Lack of Diversity and Inclusion", "Strategic Mistakes", "Non-compliance with Regulations", "Inflexibility", "Lack of Visionary Leadership", "Fear of Failure", "Lack of Agile Culture", "Failure to Adopt Technology", "Unsustainable Practices", "Customer Dissatisfaction", "Weak Marketing Strategy", "Ignoring Competitive Analysis", "Resource Mismanagement", "Lack of Informed Decision-Making", "Inefficiency in Operations", "Poor Investor Relations", "Failed Global Expansion", "Lack of Collaboration", "Intrapreneurship Failure", "Resistance to Digital Transformation", "Data Security Breaches", "Failure to Grasp Market Trends", "Ineffective Crisis Management", "Failure in Growth Hacking", "Unempowered Customers", "Storytelling Failure", "Ineffective Supply Chains", "Extravagant Spending", "Lack of Cross-Functional Collaboration", "Employee Wellbeing Neglect", "Holacracy Failure", "Neglecting Corporate Social Responsibility", "Overlooking Intellectual Property Protection", "Poor Brand Authenticity", "Failure to Pivot Strategically", "Ignoring Blockchain Integration", "Neglecting Employee Diversity", "Failing to Predict Analytics", "Ignoring Subscription-Based Revenue Models", "Ignoring Lean Startup Methodology", "Neglecting Sustainable Supply Chains", "Ignoring Predictive Analytics", "Neglecting Holistic Employee Wellbeing"]  # (your failure keywords)
 
+# Generate synthetic dataset
+data = {
+    'description': [
+        'innovative product with cutting-edge technology',
+        'struggling to gain market traction',
+        'successful startup with a strong customer base',
+        'facing financial difficulties',
+        'disruptive solution for industry challenges',
+        'poor management and lack of direction',
+        'rapid growth and expansion',
+        'declining user engagement',
+        'revolutionary idea but limited resources',
+        'established market leader with consistent growth',
+        'failing to collaborate with vendors'
+    ] * 50,  # Repeat the descriptions to create a larger dataset
+    'success_label': [1, 0, 1, 0, 1, 0, 1, 0, 1, 1, 0] * 50  # 0: Failure, 1: Success
+}
+
+df = pd.DataFrame(data)
+
 # Streamlit app
 st.title("Startup Success Prediction")
 
