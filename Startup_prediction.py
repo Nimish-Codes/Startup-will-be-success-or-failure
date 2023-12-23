@@ -45,6 +45,8 @@ if st.button("Predict"):
         'failure_feature': [any(keyword in user_input for keyword in failure_keywords)]
     })
 
+    print("Column names in DataFrame:", df.columns)
+
     # Assuming 'success_label' is the target variable
     features = df[['success_feature', 'failure_feature']]
     target = df['success_label']
